@@ -1,7 +1,6 @@
 const {Router} = require('express');
 const router = Router();
 
-
 const {renderIndex, 
     renderAntibody, 
     renderAntigen,
@@ -10,7 +9,7 @@ const {renderIndex,
     renderTools,
     renderAbout} = require('../controllers/controller');
 
-router.get('/', renderIndex); 
+router.get('/', renderIndex);  //seteo la ruta y el controlador que trabajara con ella
 router.get('/antibody', renderAntibody);
 router.get('/antigen', renderAntigen);
 router.get('/epitope', renderEpitope);

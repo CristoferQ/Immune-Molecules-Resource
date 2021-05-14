@@ -1,25 +1,26 @@
 const indexCtrl = {};
 const { response } = require('express');
 
-indexCtrl.renderIndex = async(req,res) =>{
-    res.render('index');
+//controlador que sirve para renderizar la vista
+indexCtrl.renderIndex = (req,res) =>{
+    res.render('index', {title: "TITULO INICIO"}); //le paso la variable a ejs
 };
-indexCtrl.renderAntibody = async(req,res) =>{
-    res.render('antibody');
+indexCtrl.renderAntibody = (req,res) =>{
+    res.render('antibody', {title: "TITULO ANTIBODY"});
 };
-indexCtrl.renderAntigen = async(req,res) =>{
+indexCtrl.renderAntigen = (req,res) =>{
     res.render('antigen');
 };
-indexCtrl.renderEpitope = async(req,res) =>{
+indexCtrl.renderEpitope = (req,res) =>{
     res.render('epitope');
 };
-indexCtrl.renderSearch = async(req,res) =>{
+indexCtrl.renderSearch = (req,res) =>{
     res.render('search');
 };
-indexCtrl.renderTools = async(req,res) =>{
+indexCtrl.renderTools = (req,res) =>{
     res.render('tools');
 };
-indexCtrl.renderAbout = async(req,res) =>{
+indexCtrl.renderAbout = (req,res) =>{
     res.render('about');
 };
 
