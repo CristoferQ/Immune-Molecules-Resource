@@ -1,0 +1,8 @@
+.bx-wrapper{
+    height: 400px;
+    display: block;
+    overflow: hidden;
+}
+.slider img{
+    margin-top: -10%;
+}

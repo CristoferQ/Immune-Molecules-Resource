@@ -1,9 +1,9 @@
 <style>
     .dropdown:hover .dropdown-menu {
       display: block;
+      z-index: 10;
     }
 </style>
-  
 <nav class="flex flex-wrap items-center justify-between p-2 bg-blue-200">      
     <h1 class="ml-3 leading-none text-2xl text-grey-darkest">
         <a class="no-underline text-grey-darkest hover:text-black" href="#">
@@ -35,7 +35,6 @@
         <a href="/about" class="block md:inline-block text-blue-900 hover:text-blue-500 px-3 py-3 border-b-2 border-blue-900 md:border-none">About us</a>
     </div>
 </nav> 
-
 <script>
 document.getElementById("hamburger").onclick = function toggleMenu() {
     const navToggle = document.getElementsByClassName("toggle");

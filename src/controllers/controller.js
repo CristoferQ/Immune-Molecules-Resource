@@ -1,8 +1,9 @@
 const indexCtrl = {};
-
+var fs = require('fs');
 //controlador que sirve para renderizar la vista
 indexCtrl.renderIndex = (req,res) =>{
-    res.render('index', {title: "TITULO INICIO"}); //le paso la variable a ejs
+    var sliderfiles = fs.readdirSync('./src/public/img/slider').map(file => "./img/slider/" + file)
+    res.render('index', {title: "TITULO INICIO", sliderfiles: sliderfiles}); //le paso la variable a ejs
 };
 indexCtrl.renderAntibody = (req,res) =>{
     res.render('antibody', {title: "TITULO ANTIBODY"});
