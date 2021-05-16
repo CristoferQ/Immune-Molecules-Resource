@@ -1,5 +1,4 @@
 const indexCtrl = {};
-const { response } = require('express');
 
 //controlador que sirve para renderizar la vista
 indexCtrl.renderIndex = (req,res) =>{
@@ -9,19 +8,19 @@ indexCtrl.renderAntibody = (req,res) =>{
     res.render('antibody', {title: "TITULO ANTIBODY"});
 };
 indexCtrl.renderAntigen = (req,res) =>{
-    res.render('antigen');
+    res.render('antigen', {title: "TITULO ANTIGEN"});
 };
 indexCtrl.renderEpitope = (req,res) =>{
-    res.render('epitope');
+    res.render('epitope', {title: "TITULO EPITOPE"});
 };
 indexCtrl.renderSearch = (req,res) =>{
-    res.render('search');
+    res.render('search', {title: "TITULO SEARCH"});
 };
 indexCtrl.renderTools = (req,res) =>{
-    res.render('tools');
+    res.render('tools', {title: "TITULO TOOLS"});
 };
 indexCtrl.renderAbout = (req,res) =>{
-    res.render('about');
+    res.render('about', {title: "TITULO ABOUT"});
 };
 
 module.exports = indexCtrl;
