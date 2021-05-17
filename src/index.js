@@ -3,7 +3,7 @@ const path = require('path'); //sirve para acceder a rutas
 const app = express(); //crea la variable app que es el servidor
 
 //settings
-app.set('port', 80); //setea el puerto
+app.set('port', 5001); //setea el puerto
 app.set('views', path.join(__dirname, 'views')); //deja como carpeta base 'views'
 
 app.set('view engine', 'ejs'); //setea el motor de plantillas ejs

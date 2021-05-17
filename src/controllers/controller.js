@@ -23,5 +23,7 @@ indexCtrl.renderTools = (req,res) =>{
 indexCtrl.renderAbout = (req,res) =>{
     res.render('about', {title: "TITULO ABOUT"});
 };
-
+indexCtrl.renderStructure = (req,res) =>{
+    res.render('structure', {title: "TITULO STRUCTURE", structure: req.params.structure});
+};
 module.exports = indexCtrl;

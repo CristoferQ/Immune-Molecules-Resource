@@ -7,7 +7,8 @@ const {renderIndex,
     renderEpitope,
     renderSearch,
     renderTools,
-    renderAbout} = require('../controllers/controller');
+    renderAbout,
+    renderStructure} = require('../controllers/controller');
 
 router.get('/', renderIndex);  //seteo la ruta y el controlador que trabajara con ella
 router.get('/antibody', renderAntibody);
@@ -16,5 +17,5 @@ router.get('/epitope', renderEpitope);
 router.get('/search', renderSearch);
 router.get('/tools', renderTools);
 router.get('/about', renderAbout);
-
+router.get('/structure/:structure?', renderStructure);
 module.exports = router;
