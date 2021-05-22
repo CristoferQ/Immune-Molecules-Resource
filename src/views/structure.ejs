@@ -1,11 +1,68 @@
 <%- include('partials/head'); -%>
-<body>
+<script src="https://kit.fontawesome.com/aaae1eba4c.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/spectrum-colorpicker2/dist/spectrum.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/spectrum-colorpicker2/dist/spectrum.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.16.6/sweetalert2.min.js"></script>
+<!-- Optional: include a polyfill for ES6 Promises for IE11 -->
+<link rel ="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.16.6/sweetalert2.css"/>
+ <body>
   <style>
     .mol-container {
-      width: 500px;
-      height: 500px;
+      width: 60%;
+      height: 480px;
       position: relative;
-      margin-left: 4%;
+      margin-left: 4.5%;
+      float: left;
+    }
+    #panel{
+      margin-left: 2%;
+      width: 28%;
+      float: left;
+    }
+    .panel_item{      
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin: 5px;
+    }
+    #listado{
+      border: #ccc 1px solid;
+      overflow-y: scroll;
+      height: 360px;
+    }
+    .drawing{
+      float: right;
+    }
+    .sp-replacer{
+      float: right;
+    }
+    #botones{
+      margin-left: 2%;
+      width: 28%;
+      float: left;
+      text-align:center
+    }
+    #view{
+      margin: 10px;
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+    #render{
+      margin: 10px;
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+    .clear{
+      display: block;
+      clear: both;
+    }
+    .reglon{
+      padding: 10px;
+    }
+    .go{
+      float: right;
     }
   </style>
   <%- include('partials/nav'); -%>
@@ -16,6 +73,15 @@
       </div>
     </div>
   </div>
-    <div id="container" class="mol-container"></div>
+  <div id="molecule" class="mol-container"></div>
+  <div id="panel">
+    <h4 class="center text-2xl text-blue-800 font-bold ">Epitopes</h4>
+    <ul id="listado">
+  </div>
+  <br>
+  <div id= "botones">
+<!--     <button id="render" class="rounded bg-blue-500 hover:bg-blue-700 py-2 px-4 text-white">Render<br>Epitopes</button>
+ -->    <button id="view" class="rounded bg-blue-500 hover:bg-blue-700 py-2 px-4 text-white">View<br>Sequences</button>
+  </div>
 </body>
 <script type="text/javascript" charset="utf8" src="/js/structure.js"></script>
