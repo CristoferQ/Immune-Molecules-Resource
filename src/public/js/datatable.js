@@ -1,5 +1,7 @@
-$(document).ready(function() {
-    $('#table').DataTable( {
-            responsive: true
-        } )
-} );
+$('.table').DataTable( {
+        responsive: true,
+        paging: false,
+        ordering: false,
+        info: false,
+        searching: false
+});

@@ -22,7 +22,7 @@ for (let i = 0; i < epitopes.length; i++) {
     <div class = "reglon">
       <label for="drawing">Drawing Method</label>
       <select class = "selector drawing" name="drawing" id="drawing_` + i.toString() + `">
-      <option value="cartoon">Cartoon</option>
+        <option value="cartoon">Cartoon</option>
         <option value="line">Line</option>
         <option value="cross">Cross</option>
         <option value="stick">Sticks</option>

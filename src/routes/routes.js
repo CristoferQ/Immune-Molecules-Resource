@@ -9,7 +9,11 @@ const {renderIndex,
     renderTools,
     renderAbout,
     renderStructure,
-    getSequence} = require('../controllers/controller');
+    getSequence,
+    renderProfile,
+    getAntibody,
+    getEpitope,
+    getAntigen} = require('../controllers/controller');
 
 router.get('/', renderIndex);  //seteo la ruta y el controlador que trabajara con ella
 router.get('/antibody', renderAntibody);
@@ -19,5 +23,11 @@ router.get('/search', renderSearch);
 router.get('/tools', renderTools);
 router.get('/about', renderAbout);
 router.get('/structure/:structure?', renderStructure);
+router.get('/profile/:type?/:id?', renderProfile);
+
+//Apis
+router.get('/getAntibody/:id?', getAntibody);
+router.get('/getAntigen/:id?', getAntigen);
+router.get('/getEpitope/:id?', getEpitope);
 router.get('/getSequence/:structure?', getSequence);
 module.exports = router;
