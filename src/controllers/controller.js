@@ -4,6 +4,7 @@ var fs = require('fs');
 const parsePdb = require('parse-pdb');
 var Antibody = require("../models/antibody");
 var Antigen = require("../models/antigen");
+var Epitope = require("../models/epitope");
 //controlador que sirve para renderizar la vista
 indexCtrl.renderIndex = (req,res) =>{
     var sliderfiles = fs.readdirSync('./src/public/img/slider').map(file => "./img/slider/" + file)
@@ -75,5 +76,17 @@ indexCtrl.getSequence = (req, res) => {
         let data = JSON.parse(results);
         return res.status(200).send(data)
     })
+};
+indexCtrl.getSearch = async(req, res) => {
+    //recibo los parametros desde la vista de search
+    if(req.body['submit'] == 3){
+        console.log(req.body['length_min'])
+        console.log(req.body['length_max'])
+        console.log(req.body['type'])
+        res.send("params de epitopes: ok")
+    }
+
+    //const epitopes = await Epitope.find().lean();
+    //console.log(epitopes)
 };
 module.exports = indexCtrl;
