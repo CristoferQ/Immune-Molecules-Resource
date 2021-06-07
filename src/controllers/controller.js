@@ -89,4 +89,23 @@ indexCtrl.getSearch = async(req, res) => {
     //const epitopes = await Epitope.find().lean();
     //console.log(epitopes)
 };
+indexCtrl.renderAlignment = (req,res) =>{
+    res.render('aligment', {title: "TITULO aligment"});
+};
+indexCtrl.renderMapping = (req,res) =>{
+    res.render('mapping', {title: "TITULO mapping"});
+};
+indexCtrl.renderPhysicochemical = (req,res) =>{
+    res.render('physicochemical', {title: "TITULO Physicochemical"});
+};
+indexCtrl.renderPredict_values = (req,res) =>{
+    res.render('predict_values', {title: "TITULO Predict_values"});
+};
+indexCtrl.renderPredict_interaction = (req,res) =>{
+    res.render('predict_interaction', {title: "TITULO Predict_interaction"});
+};
+indexCtrl.renderStatistical = (req,res) =>{
+    res.render('statistical', {title: "TITULO Statistical"});
+};
+
 module.exports = indexCtrl;
