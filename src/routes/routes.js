@@ -14,7 +14,9 @@ const {renderIndex,
     getAntibody,
     getEpitope,
     getAntigen,
-    getSearch} = require('../controllers/controller');
+    getSearch,
+    getGO,
+    getMinMaxLength} = require('../controllers/controller');
 
 router.get('/', renderIndex);  //seteo la ruta y el controlador que trabajara con ella
 router.get('/antibody', renderAntibody);
@@ -32,4 +34,6 @@ router.get('/getAntigen/:id?', getAntigen);
 router.get('/getEpitope/:id?', getEpitope);
 router.get('/getSequence/:structure?', getSequence);
 router.post('/getSearch', getSearch);
+router.post('/getGO', getGO);
+router.get('/getMinMaxLength/:database', getMinMaxLength);
 module.exports = router;

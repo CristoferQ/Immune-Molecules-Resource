@@ -55,22 +55,22 @@ function statisticValues_pie(data){
     create_pie(aminoacids, "aminoacids", "Residues count")
 };
 function structuralProperties_pie(data){
-    let dict_ss3 = [{"name": "H", "y": data.Valor_Alfa_helice_ss3}, 
-                    {"name": "E", "y": data.Valor_Hebra_beta_ss3},
-                    {"name": "C", "y": data.Valor_Coil_ss3}].filter(element => element.y != 0);
-    let dict_diso =[{"name": ".", "y": data.Valor_orden},
-                    {"name": "*", "y": data.Valor_desorden}].filter(element => element.y != 0);
-    let dict_ss8 = [{"name": "H", "y": data.Valor_Alfa_helice_ss8},
-                    {"name": "G", "y": data.Valor_helice_310_ss8},
-                    {"name": "I", "y": data.Valor_pi_helice_ss8},
-                    {"name": "E", "y": data.Valor_Hebra_beta_ss8},
-                    {"name": "B", "y": data.Valor_puente_beta_ss8},
-                    {"name": "T", "y": data.Valor_vuelta_beta_ss8},
-                    {"name": "S", "y": data.Valor_vuelta_beta_ss8},
-                    {"name": "L", "y": data.Valor_bucle_irregular_ss8}].filter(element => element.y != 0);
-    let dict_sac = [{"name": "B", "y": data.Valor_enterrados_sac},
-                    {"name": "M", "y": data.Valor_intermedios_sac},
-                    {"name": "E", "y": data.Valor_expuestos_sac}].filter(element => element.y != 0);
+    let dict_ss3 = [{"name": "H", "y": parseInt(data.H_ss3)}, 
+                    {"name": "E", "y": parseInt(data.E_ss3)},
+                    {"name": "C", "y": parseInt(data.C_ss3)}].filter(element => element.y != 0);
+    let dict_diso =[{"name": "Order", "y": parseInt(data["."])},
+                    {"name": "Disorder", "y": parseInt(data["*"])}].filter(element => element.y != 0);
+    let dict_ss8 = [{"name": "H", "y": parseInt(data.H_ss8)},
+                    {"name": "G", "y": parseInt(data.G_ss8)},
+                    {"name": "I", "y": parseInt(data.I_ss8)},
+                    {"name": "E", "y": parseInt(data.E_ss8)},
+                    {"name": "B", "y": parseInt(data.B_ss8)},
+                    {"name": "T", "y": parseInt(data.T_ss8)},
+                    {"name": "S", "y": parseInt(data.S_ss8)},
+                    {"name": "L", "y": parseInt(data.L_ss8)}].filter(element => element.y != 0);
+    let dict_sac = [{"name": "B", "y": parseInt(data.B_acc)},
+                    {"name": "M", "y": parseInt(data.M_acc)},
+                    {"name": "E", "y": parseInt(data.E_acc)}].filter(element => element.y != 0);
     create_pie(dict_ss3, "ss3_plot", "SS3 Prediction")
     create_pie(dict_diso, "diso_plot", "DISO Prediction")
     create_pie(dict_ss8, "ss8_plot", "SS8 Prediction")
@@ -146,7 +146,7 @@ function sequence_split(sequence, largo){
 }
 function viewStructure(pdb){
     var element = $('#molecule');
-    var config = { backgroundColor: 'black' };//#83C576
+    var config = { backgroundColor: 'white' };//#83C576
     var viewer = $3Dmol.createViewer(element, config);
     var pdbUri = '/Structures/' + pdb + '.pdb';
     $.ajax(pdbUri, {

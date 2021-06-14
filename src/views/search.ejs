@@ -1,12 +1,34 @@
 <%- include('partials/head'); -%>
-  <!-- Slider JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.min.js"
-    integrity="sha512-f0VlzJbcEB6KiW8ZVtL+5HWPDyW1+nJEjguZ5IVnSQkvZbwBt2RfCBY0CBO1PsMAqxxrG4Di6TfsCPP3ZRwKpA=="
-    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
   <!-- Slider CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.css"
-    integrity="sha512-SZgE3m1he0aEF3tIxxnz/3mXu/u/wlMNxQSnE0Cni9j/O8Gs+TjM9tm1NX34nRQ7GiLwUEzwuE3Wv2FLz2667w=="
-    crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    .loader {
+      border: 16px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 16px solid #3498db;
+      width: 120px;
+      height: 120px;
+      -webkit-animation: spin 2s linear infinite; /* Safari */
+      animation: spin 2s linear infinite;
+    }
+    
+    /* Safari */
+    @-webkit-keyframes spin {
+      0% { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    </style>
+
 
   <body>
     <%- include('partials/nav'); -%>
@@ -31,15 +53,15 @@
                 <form action="">
                   <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="grid-state">
-                      Type of database
+                      Database
                     </label>
                     <div class="relative">
                       <select id="typeOfDatabase"
                         class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
-                        <option id="info">Select a database</option>
-                        <option>Antibodies</option>
-                        <option>Antigens</option>
-                        <option>Epitopes</option>
+                        <option value="0" id="info">Select a database</option>
+                        <option value= "1">Antibody</option>
+                        <option value= "2">Antigen</option>
+                        <option value= "3">Epitope</option>
                       </select>
                       <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -50,62 +72,54 @@
                   </div>
                   <div class="mb-4" id="div_largo" hidden>
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="grid-state">
-                      largo
+                      Lenght
                     </label>
                     <div class="relative">
                       <label for="ex2">Filter by sequence lenght interval:</label><br>
-                      <small id="ex2CurrentSliderValLabel">The selected sequence largo range is between: <b
-                          id="ex2SliderVal1">5</b> and <b id="ex2SliderVal2">150</b></small>
+                      <small id="ex2CurrentSliderValLabel">The selected sequence length range is between: <br>
+                        <b id="ex2SliderVal1"><!-- min --></b> and <b id="ex2SliderVal2"><!-- max --></b> residues
+                      </small>
                       <br>
-                      <input id="ex2" type="text" class="span2" value="" data-slider-min="5" data-slider-max="150"
-                        data-slider-step="1" data-slider-value="[1,150]" />
+                      <input id="ex2" type="text" class="span2"/>
                     </div>
                   </div>
                   <div class="mb-4" id="div_pfam" hidden>
-                    <label class="block text-gray-700 text-sm font-bold mb-2">Dominio Pfam</label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Text input">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Pfam Domain</label>
+                    <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="pfam_input">
+                      <option></option>
+                    </select>
                   </div>
                   <div class="mb-4" id="div_bgo" hidden>
-                    <label class="block text-gray-700 text-sm font-bold mb-2">Código BGO</label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Text input">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Biological Process</label>
+                    <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="bp_input"><option></option></select>
                   </div>
                   <div class="mb-4" id="div_mgo" hidden>
-                    <label class="block text-gray-700 text-sm font-bold mb-2">Codigo MGO</label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Text input">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Molecular Function</label>
+                    <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="mf_input"><option></option></select>
                   </div>
                   <div class="mb-4" id="div_cgo" hidden>
-                    <label class="block text-gray-700 text-sm font-bold mb-2">Código CGO</label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Text input">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Celular Component</label>
+                    <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="cc_input"><option></option></select>
+                  </div>
+                  <div class="mb-4" id="div_cadena" hidden>
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Chain type</label>
+                    <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="chain_input"></select>
                   </div>
                   <div class="mb-4" id="div_estructura" hidden>
                     <label class="block">
-                      <input class="mr-2 leading-tight" type="checkbox">
-                      <span class="text-sm">Estructura relacionada?</span>
+                      <input class="mr-2 leading-tight" type="checkbox" id= "checkbox_structure">
+                      <span class="text-sm">Has PDB structure</span>
                     </label>
-                  </div>
-                  <div class="mb-4" id="div_uniprot" hidden>
-                    <label class="block text-gray-700 text-sm font-bold mb-2">Código UNIPROT</label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Text input">
                   </div>
                   <div class="mb-4" id="div_pdb" hidden>
-                    <label class="block text-gray-700 text-sm font-bold mb-2">Código PDB</label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Text input">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">PDB ID</label>
+                    <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="pdb_input"><option></option></select>
                   </div>
-                  <div class="mb-4" id="div_cadena" hidden>
-                    <label class="block text-gray-700 text-sm font-bold mb-2">Tipo de cadena</label>
-                    <label class="inline-flex items-center">
-                      <input type="radio" class="form-radio" name="accountType" value="1">
-                      <span class="ml-2">Pesada</span>
-                    </label>
-                    <label class="inline-flex items-center ml-6">
-                      <input type="radio" class="form-radio" name="accountType" value="2">
-                      <span class="ml-2">Ligera</span>
-                    </label>
-                  </div>
+
                   <div class="mb-4" id="div_epitope" hidden>
                     <label class="block">
-                      <input class="mr-2 leading-tight" type="checkbox">
-                      <span class="text-sm">Epitope asociado?</span>
+                      <input class="mr-2 leading-tight" type="checkbox" id = "checkbox_epitope">
+                      <span class="text-sm">Has epitope reported</span>
                     </label>
                   </div>
                   <div class="mb-4" id="div_tipo" hidden>
@@ -132,84 +146,28 @@
           </div>
         </div>
       </div>
+      <div class="flex justify-center ...">
+        <div class = "loader" hidden></div>
+      </div>
+      <div class="flex justify-center ..." id = "results">
+        <div class="w-full sm:w-1/2 md:w-full flex flex-col p-3">
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden flex-1 flex flex-col">
+            <div class="p-4 flex-1 flex flex-col text-center">
+              <h3 class="mb-2 text-2xl">Results</h3>
+              <table id = "results-table"class="display" style="width:100%">
+                <thead>
+                  <td>Id sequence</td>
+                  <td>Length</td>
+                  <td>Celular Component</td>
+                  <td>Biological Process</td>
+                  <td>Molecular Function</td>
+                  <td>Chain</td>
+                  <td>Details</td>
+                </thead>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
   </body>
-
-  <script>
-    var mySlider = $("#ex2").slider({
-      tooltip: 'hide',
-      id: "ex2"
-    });
-    $("#ex2").on("change", function (slideEvt) {
-      $("#ex2SliderVal1").text(slideEvt.value.newValue[0]);
-      $("#ex2SliderVal2").text(slideEvt.value.newValue[1]);
-    });
-    $("#typeOfDatabase").change(function () {
-      $("#info").remove();
-      $("#div_largo").hide();
-      $("#div_pfam").hide();
-      $("#div_bgo").hide();
-      $("#div_mgo").hide();
-      $("#div_cgo").hide();
-      $("#div_estructura").hide();
-      $("#div_uniprot").hide();
-      $("#div_pdb").hide();
-      $("#div_cadena").hide();
-      $("#div_epitope").hide();
-      $("#div_tipo").hide();
-      $("#div_epitope_antigeno").hide();
-      
-      if ($("#typeOfDatabase option:selected").text() == 'Antibodies') {
-        $("#div_largo").show();
-        $("#div_pfam").show();
-        $("#div_bgo").show();
-        $("#div_mgo").show();
-        $("#div_cgo").show();
-        $("#div_estructura").show();
-        $("#div_uniprot").show();
-        $("#div_pdb").show();
-        $("#div_cadena").show();
-      } else if ($("#typeOfDatabase option:selected").text() == 'Antigens') {
-        $("#div_largo").show();
-        $("#div_pfam").show();
-        $("#div_bgo").show();
-        $("#div_mgo").show();
-        $("#div_cgo").show();
-        $("#div_estructura").show();
-        $("#div_uniprot").show();
-        $("#div_pdb").show();
-        $("#div_epitope").show();
-      } else if ($("#typeOfDatabase option:selected").text() == 'Epitopes') {
-        $("#div_largo").show();
-        $("#div_tipo").show();
-        $("#div_epitope_antigeno").show();
-        
-        $("#submit").click(function() {
-          //envio los parametros por metodo post hacia la url
-          $.ajax({
-            'url': "http://localhost:5001/getSearch",
-            'method': "POST",
-            'data' : { 
-                "submit" : 3,
-                "length_min" : mySlider.slider('getValue')[0],
-                "length_max" : mySlider.slider('getValue')[1],
-                "type": $('input[name="tipo"]:checked').val()
-              }
-          }).done( function(data) {
-            //recibo los parametros desde la url
-            console.log(data)
-          });
-        });
-      }
-    });
-
-  </script>
-  <style>
-    #ex2 .slider-selection {
-      background: #0378B3;
-    }
-
-    #ex2 .slider-track-low,
-    #ex2 .slider-track-high {
-      background: grey;
-    }
-  </style>
+  <script type="text/javascript" charset="utf8" src="/js/search.js"></script>
