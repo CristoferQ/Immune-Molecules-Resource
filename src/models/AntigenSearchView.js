@@ -6,7 +6,6 @@ var AntigenSearchView = Schema({
     has_pdb: Number,
     pdb_id: String,
     Length: Number,
-    Sequence: String,
     Type: String,
     Pfam: Array,
     GO_Celular_Component: String,

@@ -3,24 +3,24 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 var AntigenSchema = Schema({
     'id_sequence': String,
+    'Sequence': String,
+    'Length': Number,
+    'Light': Number,
+    'Heavy': Number,
     'database_value': {
-        'Sequence': String,
-        'Length': Number,
         'Uniprot/Antibodypedia': Number,
         'Uniprot/ABCD': Number,
         'abYsis': Number,
         'AbDb': Number,
+        'CBtope': Number,
         'abYBank': Number,
         'BciPep': Number,
         'IMGT-3D': Number,
         'SabDab': Number,
         'sacs': Number,
         'Experimental': Number,
-        'Light': Number,
-        'Heavy': Number
     },
     'statistic_value': {
-        'Id_sequence': String,
         'no_polares_alifaticos': Number,
         'polares_sin_carga': Number,
         'aromaticos': Number,
@@ -56,15 +56,12 @@ var AntigenSchema = Schema({
         'Predict_value_CCO': Number
     },
     'phy_properties': {
-        'Id_sequence': String,
-        'Length': Number,
         'MolecularWeight': Number,
         'Isoelectric_point': Number,
         'Charge_density': Number,
         'Charge': Number
     },
     'structural_value': {
-        'Id_sequence': String,
         'Valor_Alfa_helice_ss3': Number,
         'Valor_Hebra_beta_ss3': Number,
         'Valor_Coil_ss3': Number,

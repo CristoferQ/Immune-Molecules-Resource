@@ -19,11 +19,12 @@ $.ajax({
         let antibody_data = data[0];
         statisticValues_pie(antibody_data.statistic_value)
         structuralProperties_pie(antibody_data.structural_value);
-        structuralProperties_aligns(antibody_data.structural_value, antibody_data.database_value.Sequence, 75)
+        structuralProperties_aligns(antibody_data.structural_value, antibody_data.Sequence, 75)
     },
     complete: (data)=>{
         let antibody_data = data.responseJSON[0];
         if(antibody_data.has_pdb == 1){
+            $("#viewer").show()
             let pdb = antibody_data.pdb_id;
             viewStructure(pdb)
             viewSequences(pdb)

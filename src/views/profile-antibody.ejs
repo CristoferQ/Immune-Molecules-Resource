@@ -7,8 +7,16 @@
     <div id = "ficha">
         <h2><%-data.id_sequence-%></h2>
         <div id = "header">
-            <p id="sequence"> <%-data.database_value.Sequence-%></p>
-            <p>Length: <%-data.database_value.Length-%> aa</p>
+            <p id="sequence"> <%-data.Sequence-%></p>
+            <p>Length: <%-data.Length-%> aa</p>
+            <p>Data Sources:</p>
+            <ul>
+            <% for(let i = 0; i < data_sources.length; i++){ %>
+              <% if(data_sources[i] != "$init"){ %>
+                  <li><%=data_sources[i]%></li>
+              <% } %>
+            <% } %>
+            </ul>
         </div>
         <hr>
         <div id = "plots">
@@ -123,9 +131,11 @@
             </table>
         </div>
         <hr>
-        <h3><%=data.pdb_id%></h3>
-        <div id="molecule" class="mol-container"></div>
-        <div id="chains"></div>
+        <div id = "viewer" hidden>
+          <h3><%=data.pdb_id%></h3>
+          <div id="molecule" class="mol-container"></div>
+          <div id="chains"></div>
+        </div>
     </div>
 </body>
 <script type="text/javascript" charset="utf8" src="/js/profile-antibody.js"></script>

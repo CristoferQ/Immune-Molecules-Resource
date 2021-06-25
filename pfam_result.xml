@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pfam xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns="https://pfam.xfam.org/"
+      xsi:schemaLocation="https://pfam.xfam.org/
+                          https://pfam.xfam.org/static/documents/schemas/pfam_family.xsd"
+      release="34.0"
+      release_date="2021-03-04">
+  <results job_id="A3F56874-D3AF-11EB-B7A7-144A0695EB6A">
+    <matches>
+      <protein length="565">
+        <database id="pfam" release="34.0" release_date="2021-03-04">
+          <match accession="PF07686.17" id="V-set" type="Pfam-A" class="Domain">
+            <location start="6" end="113" ali_start="6" ali_end="112" hmm_start="1" hmm_end="108" evalue="1.5e-19" bitscore="70.1" evidence="hmmer v3.1b2" significant="1">
+              <hmm>
+                <![CDATA[qtprevtvaeGesvtLpCtls...sseseeslsvyWyrqppgkepeeliayysnkskeekkkgrfslrkdpskgdfsltiqnltlsDsGtYtCavvpsgegvfgkgtrLtV]]>
+              </hmm>
+              <match_string>
+                <![CDATA[q+p ++ v++Ge++t++C+ s    ++s++ +++ Wy+q+pg +p +l++y+ ++++ ++ ++rfs+++  s +df+lti++l+++D ++Y+C+  +s  ++fg+gt+L++]]>
+              </match_string>
+              <pp>
+                <![CDATA[789***************55533333789*************.66666667766555544.67******..***********************77777777*******87]]>
+              </pp>
+              <seq>
+                <![CDATA[QSPDSLAVSLGERATINCKSSqsvLYSSNNKNYLAWYQQKPG-QPPKLLIYWASTRESGV-PDRFSGSG--SGTDFTLTISSLQAEDVAVYYCQQYYSTPYTFGQGTKLEI]]>
+              </seq>
+              <raw>
+                <![CDATA[
+#HMM       qtprevtvaeGesvtLpCtls...sseseeslsvyWyrqppgkepeeliayysnkskeekkkgrfslrkdpskgdfsltiqnltlsDsGtYtCavvpsgegvfgkgtrLtV
+#MATCH     q+p ++ v++Ge++t++C+ s    ++s++ +++ Wy+q+pg +p +l++y+ ++++ ++ ++rfs+++  s +df+lti++l+++D ++Y+C+  +s  ++fg+gt+L++
+#PP        789***************55533333789*************.66666667766555544.67******..***********************77777777*******87
+#SEQ       QSPDSLAVSLGERATINCKSSqsvLYSSNNKNYLAWYQQKPG-QPPKLLIYWASTRESGV-PDRFSGSG--SGTDFTLTISSLQAEDVAVYYCQQYYSTPYTFGQGTKLEI
+                ]]>
+              </raw>
+            </location>
+            <location start="119" end="226" ali_start="119" ali_end="225" hmm_start="1" hmm_end="108" evalue="1.5e-19" bitscore="70.1" evidence="hmmer v3.1b2" significant="1">
+              <hmm>
+                <![CDATA[qtprevtvaeGesvtLpCtls...sseseeslsvyWyrqppgkepeeliayysnkskeekkkgrfslrkdpskgdfsltiqnltlsDsGtYtCavvpsgegvfgkgtrLtV]]>
+              </hmm>
+              <match_string>
+                <![CDATA[q+p ++ v++Ge++t++C+ s    ++s++ +++ Wy+q+pg +p +l++y+ ++++ ++ ++rfs+++  s +df+lti++l+++D ++Y+C+  +s  ++fg+gt+L++]]>
+              </match_string>
+              <pp>
+                <![CDATA[789***************55533333789*************.66666667766555544.67******..***********************77777777*******87]]>
+              </pp>
+              <seq>
+                <![CDATA[QSPDSLAVSLGERATINCKSSqsvLYSSNNKNYLAWYQQKPG-QPPKLLIYWASTRESGV-PDRFSGSG--SGTDFTLTISSLQAEDVAVYYCQQYYSTPYTFGQGTKLEI]]>
+              </seq>
+              <raw>
+                <![CDATA[
+#HMM       qtprevtvaeGesvtLpCtls...sseseeslsvyWyrqppgkepeeliayysnkskeekkkgrfslrkdpskgdfsltiqnltlsDsGtYtCavvpsgegvfgkgtrLtV
+#MATCH     q+p ++ v++Ge++t++C+ s    ++s++ +++ Wy+q+pg +p +l++y+ ++++ ++ ++rfs+++  s +df+lti++l+++D ++Y+C+  +s  ++fg+gt+L++
+#PP        789***************55533333789*************.66666667766555544.67******..***********************77777777*******87
+#SEQ       QSPDSLAVSLGERATINCKSSqsvLYSSNNKNYLAWYQQKPG-QPPKLLIYWASTRESGV-PDRFSGSG--SGTDFTLTISSLQAEDVAVYYCQQYYSTPYTFGQGTKLEI
+                ]]>
+              </raw>
+            </location>
+            <location start="232" end="339" ali_start="232" ali_end="338" hmm_start="1" hmm_end="108" evalue="1.5e-19" bitscore="70.1" evidence="hmmer v3.1b2" significant="1">
+              <hmm>
+                <![CDATA[qtprevtvaeGesvtLpCtls...sseseeslsvyWyrqppgkepeeliayysnkskeekkkgrfslrkdpskgdfsltiqnltlsDsGtYtCavvpsgegvfgkgtrLtV]]>
+              </hmm>
+              <match_string>
+                <![CDATA[q+p ++ v++Ge++t++C+ s    ++s++ +++ Wy+q+pg +p +l++y+ ++++ ++ ++rfs+++  s +df+lti++l+++D ++Y+C+  +s  ++fg+gt+L++]]>
+              </match_string>
+              <pp>
+                <![CDATA[789***************55533333789*************.66666667766555544.67******..***********************77777777*******87]]>
+              </pp>
+              <seq>
+                <![CDATA[QSPDSLAVSLGERATINCKSSqsvLYSSNNKNYLAWYQQKPG-QPPKLLIYWASTRESGV-PDRFSGSG--SGTDFTLTISSLQAEDVAVYYCQQYYSTPYTFGQGTKLEI]]>
+              </seq>
+              <raw>
+                <![CDATA[
+#HMM       qtprevtvaeGesvtLpCtls...sseseeslsvyWyrqppgkepeeliayysnkskeekkkgrfslrkdpskgdfsltiqnltlsDsGtYtCavvpsgegvfgkgtrLtV
+#MATCH     q+p ++ v++Ge++t++C+ s    ++s++ +++ Wy+q+pg +p +l++y+ ++++ ++ ++rfs+++  s +df+lti++l+++D ++Y+C+  +s  ++fg+gt+L++
+#PP        789***************55533333789*************.66666667766555544.67******..***********************77777777*******87
+#SEQ       QSPDSLAVSLGERATINCKSSqsvLYSSNNKNYLAWYQQKPG-QPPKLLIYWASTRESGV-PDRFSGSG--SGTDFTLTISSLQAEDVAVYYCQQYYSTPYTFGQGTKLEI
+                ]]>
+              </raw>
+            </location>
+            <location start="345" end="452" ali_start="345" ali_end="451" hmm_start="1" hmm_end="108" evalue="1.5e-19" bitscore="70.1" evidence="hmmer v3.1b2" significant="1">
+              <hmm>
+                <![CDATA[qtprevtvaeGesvtLpCtls...sseseeslsvyWyrqppgkepeeliayysnkskeekkkgrfslrkdpskgdfsltiqnltlsDsGtYtCavvpsgegvfgkgtrLtV]]>
+              </hmm>
+              <match_string>
+                <![CDATA[q+p ++ v++Ge++t++C+ s    ++s++ +++ Wy+q+pg +p +l++y+ ++++ ++ ++rfs+++  s +df+lti++l+++D ++Y+C+  +s  ++fg+gt+L++]]>
+              </match_string>
+              <pp>
+                <![CDATA[789***************55533333789*************.66666667766555544.67******..***********************77777777*******87]]>
+              </pp>
+              <seq>
+                <![CDATA[QSPDSLAVSLGERATINCKSSqsvLYSSNNKNYLAWYQQKPG-QPPKLLIYWASTRESGV-PDRFSGSG--SGTDFTLTISSLQAEDVAVYYCQQYYSTPYTFGQGTKLEI]]>
+              </seq>
+              <raw>
+                <![CDATA[
+#HMM       qtprevtvaeGesvtLpCtls...sseseeslsvyWyrqppgkepeeliayysnkskeekkkgrfslrkdpskgdfsltiqnltlsDsGtYtCavvpsgegvfgkgtrLtV
+#MATCH     q+p ++ v++Ge++t++C+ s    ++s++ +++ Wy+q+pg +p +l++y+ ++++ ++ ++rfs+++  s +df+lti++l+++D ++Y+C+  +s  ++fg+gt+L++
+#PP        789***************55533333789*************.66666667766555544.67******..***********************77777777*******87
+#SEQ       QSPDSLAVSLGERATINCKSSqsvLYSSNNKNYLAWYQQKPG-QPPKLLIYWASTRESGV-PDRFSGSG--SGTDFTLTISSLQAEDVAVYYCQQYYSTPYTFGQGTKLEI
+                ]]>
+              </raw>
+            </location>
+            <location start="458" end="565" ali_start="458" ali_end="564" hmm_start="1" hmm_end="108" evalue="1.5e-19" bitscore="70.1" evidence="hmmer v3.1b2" significant="1">
+              <hmm>
+                <![CDATA[qtprevtvaeGesvtLpCtls...sseseeslsvyWyrqppgkepeeliayysnkskeekkkgrfslrkdpskgdfsltiqnltlsDsGtYtCavvpsgegvfgkgtrLtV]]>
+              </hmm>
+              <match_string>
+                <![CDATA[q+p ++ v++Ge++t++C+ s    ++s++ +++ Wy+q+pg +p +l++y+ ++++ ++ ++rfs+++  s +df+lti++l+++D ++Y+C+  +s  ++fg+gt+L++]]>
+              </match_string>
+              <pp>
+                <![CDATA[789***************55533333789*************.66666667766555544.67******..***********************77777777*******87]]>
+              </pp>
+              <seq>
+                <![CDATA[QSPDSLAVSLGERATINCKSSqsvLYSSNNKNYLAWYQQKPG-QPPKLLIYWASTRESGV-PDRFSGSG--SGTDFTLTISSLQAEDVAVYYCQQYYSTPYTFGQGTKLEI]]>
+              </seq>
+              <raw>
+                <![CDATA[
+#HMM       qtprevtvaeGesvtLpCtls...sseseeslsvyWyrqppgkepeeliayysnkskeekkkgrfslrkdpskgdfsltiqnltlsDsGtYtCavvpsgegvfgkgtrLtV
+#MATCH     q+p ++ v++Ge++t++C+ s    ++s++ +++ Wy+q+pg +p +l++y+ ++++ ++ ++rfs+++  s +df+lti++l+++D ++Y+C+  +s  ++fg+gt+L++
+#PP        789***************55533333789*************.66666667766555544.67******..***********************77777777*******87
+#SEQ       QSPDSLAVSLGERATINCKSSqsvLYSSNNKNYLAWYQQKPG-QPPKLLIYWASTRESGV-PDRFSGSG--SGTDFTLTISSLQAEDVAVYYCQQYYSTPYTFGQGTKLEI
+                ]]>
+              </raw>
+            </location>
+          </match>
+        </database>
+      </protein>
+    </matches>
+  </results>
+</pfam>

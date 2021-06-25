@@ -1,0 +1,1 @@
+{"summary_alignment": [{"input_sequence": "CQQYYSTPYTFGQGT", "space_format": "|||||||||||||||", "compare_sequence": "CQQYYSTPYTFGQGT", "id_sequence": ">1", "distance_sequences": "0"}, {"input_sequence": "CQQYYSTPYTFGQGT", "space_format": ".....|.|.--|.||", "compare_sequence": "LGTWLSDPP--GAGT", "id_sequence": ">2", "distance_sequences": "10"}]}
